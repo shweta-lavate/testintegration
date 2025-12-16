@@ -13,4 +13,4 @@ jobs:
           curl -v --http1.1 -X POST \
             -H "User-Agent: curl" \
             -H "Accept: application/json" \
-            "https://arn-qa.upraise.io/arn/executewebhook/f97f646a-9f93-4a41-9cdb-06a36c5b6470?version=10806"
+            "https://arn-qa.upraise.io/arn/executewebhook/8d570e0c-14ec-4d9d-ace9-8fbe306e268c?version=10806"
