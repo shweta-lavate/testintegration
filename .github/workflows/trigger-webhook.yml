@@ -1,10 +1,4 @@
-name: Trigger Webhook
-
-on:
-  workflow_dispatch:   # allows manual trigger
-  push:
-    branches:
-      - main
+name: ARN Webhook QA Test
 
 on:
   workflow_dispatch:
