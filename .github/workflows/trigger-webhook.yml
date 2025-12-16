@@ -6,18 +6,17 @@ on:
     branches:
       - main
 
-jobs:
-  trigger:
-    runs-on: ubuntu-latest
+on:
+  workflow_dispatch:
 
+jobs:
+  trigger-arn:
+    runs-on: ubuntu-latest
     steps:
-      - name: Call webhook URL
+      - name: Trigger ARN webhook
         run: |
-          curl -X POST "${{ secrets.WEBHOOK_URL }}" \
-          -H "Content-Type: application/json" \
-          -d '{
-            "event": "github_action",
-            "repository": "${{ github.repository }}",
-            "branch": "${{ github.ref_name }}",
-            "commit": "${{ github.sha }}"
-          }'
+          echo "Calling ARN webhook from GitHub Actions"
+          curl -v --http1.1 -X GET \
+            -H "User-Agent: curl" \
+            -H "Accept: application/json" \
+            "https://arn-qa.upraise.io/arn/executewebhook/f97f646a-9f93-4a41-9cdb-06a36c5b6470?version=10806"
